@@ -1,0 +1,52 @@
+body{
+    font-family:"", Verdana;
+    background-color:rgb(20,20,20)
+}
+#homepage{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: rgb(20,20,20);
+}
+.homepageimg{
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(20,20,20);
+}
+#navbar{
+   width: 100vw;
+    height: 50px;
+    margin: 0px;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+     text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: rgb(20,20,20); 
+}
+#navbar table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#navbar table tr td{
+    background-color: rgb(20,20,20);
+    border: white 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.nbsp{
+    color: rgb(20,20,20);
+    user-select: none;
+    text-decoration: none;
+}
+
+#item-details{
+    margin-top: 210px;
+}

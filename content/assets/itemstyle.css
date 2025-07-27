@@ -1,0 +1,118 @@
+
+
+
+
+.container {
+    margin-top: 180px;
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    align-items: stretch;
+    height: 80vh; /* Ensures both sides fill the same vertical space */
+}
+
+.left-side, .right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(129, 100, 38);
+    border-radius: 30px;
+    min-width: 0;
+    height: 100%;
+    /* Remove width, min-width, max-width from both */
+}
+
+.left-side {
+    align-items: center;
+    color: rgb(192, 165, 108);
+}
+
+.right-side {
+    align-items: center;
+}
+
+#slideshow-container img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+#slideshow-container{
+    width: 80%;
+   
+    
+}
+#item-details  { 
+    margin-top: 0 !important;
+   margin-bottom: 130px !important;
+}
+#item-details h2 {
+     margin-top: 0 !important;
+}
+        #slideshow-container div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #item-link {
+            display: block;
+            margin-top: 20px;
+            color: black;
+            text-decoration: none;
+        }
+        #item-details h2{
+            font-size: 50px;
+        }
+        #back_button {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(192, 165, 108);
+            border-radius: 30px;
+            align-items: center;
+            font-size: 1rem; /*makes buttons width go*/
+            border: 0px;
+            width: auto;
+        }
+        h1{
+            font-size: 350%;
+        }
+        p{
+            font-size: 150%;
+        }
+        #button-header {
+            font-size: 0.75rem;
+        }
+        .wide-btn {
+   font-weight: bold;
+   width: 40%;
+    font-size: 0.5rem;
+    margin-right: 20px;
+    background-color: rgb(192, 165, 108);
+
+    
+}
+.itemscale {
+    width: 40%; /* Set your desired width */
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(192, 165, 108);
+    border-radius: 30px;
+    max-height: 0;
+    
+}
+.item-spacer {
+    width: 20px; /* Adjust the width as needed */
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(0, 0, 0,0);
+   
+}
+.item-bottom-spacer{
+    color: rgba(0, 0, 0,0);
+    font-size: 2px;
+}
+
