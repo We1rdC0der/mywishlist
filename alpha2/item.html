@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Details</title>
+    <link rel="stylesheet" href="assets/mainstyle.css"> -- main css style stylesheet
+    <link rel="stylesheet" href="assets/itemstyle.css"> -- item css style stylesheet
+</head>
+<body>
+    <div id="navbar">
+        <table>
+            <tr>
+                <td><a href="index.html" id="homepage"><img class="homepageimg" src="assets/images/logo.png"><br><span class="nbsp">00</span></a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ...your HTML above... -->
+
+<div class="container">
+  <div class="left-side">
+    <table>
+        <!-- Add class="wide-btn" to both buttons -->
+         <tr>
+            <td class="itemscale">
+<button id="back_button" class="wide-btn" href="index.html">
+    <a>Back to Wishlist</a>
+</button>
+</td>
+<td class="item-spacer"><p>00</p></td>
+<td class="item-scale-2">
+<button onclick="getitem()" id="back_button" class="wide-btn">
+    <a>Get Item</a>
+</button>
+</td></tr>
+<tr><td class="item-bottom-spacer"><p>00</p></td></tr>
+    </table>
+      <div id="slideshow-container"></div>
+      
+  </div>
+<div class="right-side" id="item-details">
+  </div>
+</div>
+
+<div id="same-price-items">
+  <div class="same-price-title">Other items for the same price:</div>
+  <div class="same-price-scroll">
+    <div class="same-price-flex">
+      <!-- your .same-price-item-link-to-page divs go here -->
+    </div>
+  </div>
+</div>
+<footer style="color:white; text-align: center;">made by we1rdc0der</footer>
+<script src="DATA/itemdata.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    const itemName = getQueryParam('name');
+    const item = window.WISHLIST_ITEMS.find(i => i.name === itemName);
+
+    if (item) {
+        // Filter out empty images
+        let images = Array.isArray(item.images) ? item.images.filter(src => src && src.trim() !== "") : [];
+        if (images.length === 0) {
+            if (item.imgUrl && item.imgUrl.trim() !== "") {
+                images = [item.imgUrl];
+            } else {
+                images = ['assets/images/placeholder.jpeg'];
+            }
+        }
+
+        let current = 0;
+
+        function showSlide(idx) {
+            const imgSrc = images[idx] || 'assets/images/placeholder.jpeg';
+            document.getElementById('slideshow-container').innerHTML = `
+                <img src="${imgSrc}" alt="${item.name}" style="max-width:100%;border-radius:16px;">
+                <div style="margin-top:10px;">
+                    <button id="prev-slide" ${idx === 0 ? "disabled" : ""}>&lt;</button>
+                    <span>${idx + 1} / ${images.length}</span>
+                    <button id="next-slide" ${idx === images.length - 1 ? "disabled" : ""}>&gt;</button>
+                </div>
+            `;
+            document.getElementById('prev-slide').onclick = () => { if (current > 0) { current--; showSlide(current); } };
+            document.getElementById('next-slide').onclick = () => { if (current < images.length - 1) { current++; showSlide(current); } };
+        }
+        showSlide(current);
+
+        // Set details in the right column
+        document.getElementById('item-details').innerHTML = `
+            <h1>${item.name}</h1>
+            <p><strong>Price:</strong> ${item.amount === "unk" ? "Unknown" : "$" + Number(item.amount).toFixed(2)}</p>
+            <p><strong>Bio:</strong> ${item.bio}</p>
+            <p><strong>Why I want This Item:</strong> ${item.longBio ? item.longBio : "No additional info."}</p>
+        `;
+
+        // Show other items at the same price
+        const samePriceItems = window.WISHLIST_ITEMS.filter(i =>
+            i.name !== item.name &&
+            i.amount === item.amount &&
+            i.amount !== "unk"
+        );
+
+if (samePriceItems.length > 0) {
+    let html = `<div class="same-price-title">Other items for the same price:</div>`;
+html += `<div class="same-price-scroll"><div class="same-price-flex">`;
+samePriceItems.forEach(i => {
+    html += `<div class="same-price-item-link-to-page">
+        <a href="item.html?name=${encodeURIComponent(i.name)}">${i.name}</a>
+        <div>$${Number(i.amount).toFixed(2)}</div>
+    </div>`;
+});
+html += `</div></div>`;
+document.getElementById('same-price-items').innerHTML = html;
+} else {
+    document.getElementById('same-price-items').innerHTML = "";
+}
+    } else {
+        document.getElementById('item-details').innerHTML = "<p>Item not found.</p>";
+        document.getElementById('slideshow-container').innerHTML = "";
+        document.getElementById('same-price-items').innerHTML = "";
+    }
+});
+
+function getitem() {
+    const itemName = new URLSearchParams(window.location.search).get('name');
+    const item = window.WISHLIST_ITEMS.find(i => i.name === itemName);
+    if (item && item.link) {
+        window.open(item.link, '_blank');
+    } else {
+        alert("No link available for this item.");
+    }
+}
+</script>
+</body>
+</html>
