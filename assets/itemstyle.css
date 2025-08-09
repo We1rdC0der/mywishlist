@@ -1,0 +1,218 @@
+.container {
+    margin-top: 180px;
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    align-items: stretch;
+    height: 80vh; /* Ensures both sides fill the same vertical space */
+}
+
+.left-side, .right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(129, 100, 38);
+    border-radius: 30px;
+    min-width: 0;
+    height: 100%;
+    /* Remove width, min-width, max-width from both */
+}
+
+.left-side {
+    align-items: center;
+    color: rgb(192, 165, 108);
+}
+
+.right-side {
+    align-items: center;
+}
+
+#slideshow-container img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+#slideshow-container{
+    width: 80%;
+   
+    
+}
+#item-details  { 
+    margin-top: 0 !important;
+   margin-bottom: 130px !important;
+}
+#item-details h2 {
+     margin-top: 0 !important;
+}
+        #slideshow-container div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #item-link {
+            display: block;
+            margin-top: 20px;
+            color: black;
+            text-decoration: none;
+        }
+        #item-details h2{
+            font-size: 50px;
+        }
+        #back_button {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(192, 165, 108);
+            border-radius: 30px;
+            align-items: center;
+            font-size: 1rem; /*makes buttons width go*/
+            border: 0px;
+            width: auto;
+            width: 100%; /* Set your desired width */
+    
+        }
+        h1{
+            font-size: 350%;
+        }
+        p{
+            font-size: 150%;
+        }
+        #button-header {
+            font-size: 0.75rem;
+        }
+        .wide-btn {
+   font-weight: bold;
+   width: 40%;
+    font-size: 0.5rem;
+    margin-right: 20px;
+    background-color: rgb(192, 165, 108);
+
+    
+}
+.item-spacer {
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(0, 0, 0,0);
+    width: 10%;
+    user-select:none;
+   
+}
+.item-bottom-spacer{
+    color: rgba(0, 0, 0,0);
+    font-size: 2px;
+}
+table{
+    width: 80%;
+}
+.item-scale{
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(0, 0, 0,0);
+    width: 30%;
+}
+.item-scale-2{
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(0, 0, 0,0);
+    width: 40%;
+}
+#same-price-items {
+    background-color: rgb(129, 100, 38);
+    border-radius: 30px;
+    margin: 20px;
+    padding: 20px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: auto; /* Let content set height */
+}
+
+.same-price-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding: 0 20px;
+    min-width: max-content; /* Prevent wrapping */
+}
+
+.same-price-item-link-to-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #c0a56c;
+    border-radius: 16px;
+    padding: 16px 24px;
+    min-width: 180px;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+.same-price-item-link-to-page:hover {
+    transform: scale(1.05);
+}
+.same-price-item-link-to-page a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+#same-price-items::-webkit-scrollbar {
+    height: 12px;
+    background: rgb(129, 100, 38);
+    border-radius: 8px;
+}
+
+#same-price-items::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 8px;
+    border: 2px solid rgb(129, 100, 38);
+}
+
+#same-price-items::-webkit-scrollbar-track {
+    background: #a4843a;
+    border-radius: 8px;
+}
+
+/* Firefox */
+#same-price-items {
+    scrollbar-color: #000000 #a4843a;
+    scrollbar-width: thin;
+}
+.same-price-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    margin-left: 20px;
+}
+
+.same-price-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-bottom: 8px;
+}
+
+.same-price-scroll::-webkit-scrollbar {
+    height: 12px;
+    background: rgb(129, 100, 38);
+    border-radius: 8px;
+}
+.same-price-scroll::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 8px;
+    border: 2px solid rgb(129, 100, 38);
+}
+.same-price-scroll::-webkit-scrollbar-track {
+    background: #a4843a;
+    border-radius: 8px;
+}
+/* Firefox */
+.same-price-scroll {
+    scrollbar-color: #000000 rgb(129, 100, 38);
+}

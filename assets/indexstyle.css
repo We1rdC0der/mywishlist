@@ -1,0 +1,60 @@
+#itemlist .item table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+#itemlist .item table td {
+    width: 33.33%;
+    height: 80px;
+    vertical-align: top;
+    background-color: rgb(129, 100, 38);
+    border-radius: 32px;
+    text-align: center;
+    box-sizing: border-box;
+}
+#itemlist .item table td * {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+.searchbyamountholder {
+    margin-top: 210px; /* Increase this value as needed */
+}
+#searchbyamountdiv {
+    width: 50%;
+    margin: 90px auto 0 auto; /* top, right/left auto, bottom, left auto */
+    display: block;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(129,100,38);
+    border-radius: 32px;
+}
+#searchbyamountdiv button  {
+ 
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 32px;
+}
+#itemlist .item {
+  padding: 10px;
+  margin: 5px;
+}
+h3{
+    color: white;
+}
+.item-img{
+    margin-top: 10px;
+    border-radius: 15px;
+}
+.item-bio{
+    font-weight: 500;
+}
+.item-price{
+    color: rgb(0, 0, 0);
+    font-weight: 1000;
+    font-size: larger;
+}
