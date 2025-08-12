@@ -1,0 +1,86 @@
+body{
+    font-family:"", Verdana;
+    background-color:rgb(20,20,20)
+}
+#homepage{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: rgb(20,20,20);
+}
+.homepageimg{
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(20,20,20);
+    margin-left: 160px;
+}
+#navbar{
+   width: 100vw;
+    height: 50px;
+    margin: 0px;
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+     text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: rgb(20,20,20); 
+}
+#navbar table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#navbar table tr td{
+    background-color: rgb(20,20,20);
+    border: white 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.nbsp{
+    color: rgb(20,20,20);
+    user-select: none;
+    text-decoration: none;
+}
+
+#item-details{
+    margin-top: 210px;
+}
+.accountdivbutton{
+    width: 10%;
+}
+#accountbutton{
+    width: 70px;          
+    height: 70px;
+    margin-right: 20px;
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+    margin-top: -55px
+}
+#accountpfp {
+    width: 70px;          
+    height: 70px;
+    border-radius: 50%;   
+    object-fit: cover;     
+    background: #000000;   
+}
+#accountdiv {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(30,30,30, 0.98); /* add slight opacity if you want */
+    z-index: 9999; /* higher than navbar (9999) */
+    margin-top: 170px;
+}
+#pfpImg{
+    width: 50%;
+    height: 50%;
+}
